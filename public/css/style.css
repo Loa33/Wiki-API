@@ -95,6 +95,7 @@ aside{
 
   .container-fluid{
     background-color: #292e49;
+    max-width: 1320px;
   }
 
   h2{
@@ -136,11 +137,6 @@ aside{
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
-
-  .container-fluid{
-    max-width: 1320px;
-    
   }
   .container{
     max-width: 1320px;
