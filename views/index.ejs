@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+<body class="body-container">
+
+    
+    <div class="container-fluid content">
+        <div class="row ">
+            <aside class="col-3 ">
+                
+                <h1 class="title">Articles</h1>
+                    
+                <hr>
+            <% articles.forEach(function(article) {%>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link" href="/<%=article._id%>"><%= article.title %></a>
+                    </li>
+                    </ul>
+
+            <%})%>
+        </aside>
+        <main class="col-9">
+            <h2><%= title %></h2>
+            <p> <%= content %></p>
+        </main>
+        </div>
+        
+        
+    </div>
+  
+
+<%- include("partials/footer") -%> 

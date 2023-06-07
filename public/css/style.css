@@ -1,0 +1,147 @@
+.body-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #292e49;
+}
+.title{
+    margin: 25px 15px;
+    font-family: 'Zilla Slab', serif;
+    color: #fff;
+    font-size: 1.8rem;
+
+}
+.article{
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex-grow: 1;
+    padding-bottom: 15px;
+    color: #D8D8D8;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background: #D8D8D8;
+    background-image: linear-gradient(to right, #292e49b5, #D8D8D8, #292e49a7);
+}
+.navbar {
+    font-size: 12px;
+    letter-spacing: 5px;
+    background: #D8D8D8;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: sticky;
+}
+
+.navbar-brand{
+    color: #292e49;
+    font-family: 'Zilla Slab', serif;
+    font-size: 2.5rem;
+}
+.navbar-brand:hover{
+    color: #9DB2BF;
+}
+.navbar-nav  li a{
+    text-decoration: none;
+    color: #292e49;
+    font-size: 1.2rem;
+}
+.navbar-nav  li a:hover{
+    color: #9DB2BF;
+}
+
+
+.api-span{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+
+
+main{
+    background-color: #292e49;
+    height: calc(100vh - 9rem);
+    padding: 20px !important;
+}
+
+aside{
+    
+    background-color: #292e49;
+    padding-left: 15px;
+    position: sticky;
+   
+}
+
+.scrollable {
+    height: calc(100vh - 9rem);
+    overflow-y: auto;
+}
+
+.nav-link{
+    color:#F6F1F1;
+    font-size: 1.2rem;
+}
+
+.justify-content-center .nav-item .nav-link{
+    color: #292e49;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover{
+    color: #9DB2BF;
+}
+
+
+  .container-fluid{
+    background-color: #292e49;
+  }
+
+  h2{
+    color: #F6F1F1;
+    font-family: 'Zilla Slab', serif;
+  }
+
+  .full-height{
+    min-height: 100%;
+  }
+
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D8D8D8;
+    color: #292e49;
+    text-align: center;
+    height: 80px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .container-fluid{
+    max-width: 1320px;
+    
+  }
+  .container{
+    max-width: 1320px;
+  }
