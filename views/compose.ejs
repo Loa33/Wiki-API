@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<body class="body-container">
+
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <div class="container-fluid content">
+        <h1 class="title">Compose article</h1>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" id="content" required placeholder="Enter content"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+        
+</div> 
+<script>
+    CKEDITOR.replace('content');
+
+    CKEDITOR.on('instanceReady', function() {
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Verifica si CKEDITOR.instances.blogContent está definido antes de intentar acceder a getData()
+            if (CKEDITOR.instances.content) {
+                const contenido = CKEDITOR.instances.content.getData();
+                document.querySelector('#content').value = CKEDITOR.instances.content.getData();
+                console.log(contenido);
+                console.log(document.querySelector('#content').value);
+            }
+
+            // Envía el formulario de forma asíncrona
+            setTimeout(() => e.target.submit(), 0);
+        });
+    });
+</script>
+<%- include("partials/footer.ejs") %>
+

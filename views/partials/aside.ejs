@@ -1,0 +1,15 @@
+<aside class="col-3">
+  <h1 class="aside-title">Articles</h1>
+
+  <hr />
+  <% articles.forEach(function(article) {%>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="/article/<%=article._id%>"
+        ><%= article.title %></a
+      >
+    </li>
+  </ul>
+
+  <%})%>
+</aside>

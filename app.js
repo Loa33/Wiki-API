@@ -50,21 +50,44 @@ async function findOne(id){
     }
 }
 
+async function save(title, content){
+    try{
+        const article = new Article({
+            title:title,
+            content: content
+        });
+        await article.save();
+    }catch(error){
+        console.log(error.message);
+    }
+}
+
 app.get('/', async(req, res) => {
     const title = "Welcome to Wiki API";
-    const content = "Aquí, encontrarás una rica fuente de conocimiento que abarca desde los conceptos más básicos hasta los temas avanzados en una amplia gama de lenguajes y disciplinas de programación. Nuestra misión es proporcionar una plataforma de aprendizaje accesible, inclusiva y colaborativa para todos, sin importar si eres un completo principiante buscando aprender tu primer lenguaje de programación, un estudiante persiguiendo una educación formal en informática, o un profesional experimentado buscando mantenerse al día con las últimas tendencias y tecnologías."
+    const content = "<p>Here, you'll find a rich source of knowledge ranging from the most basic concepts to advanced topics in a wide range of programming languages and disciplines. Our mission is to provide an accessible, inclusive, and collaborative learning platform for everyone, whether you are a complete beginner looking to learn your first programming language, a student pursuing a formal computer science education, or a seasoned professional looking to keep up with the latest developments. latest trends and technologies.</p> <pre><code class='language-javascript'>console.log('Welcome and Enjoy!');</code></pre>";
     res.render("index", {title: title, content: content, articles: await find()});
 })
 
-app.get("/:_id", async(req, res) =>{
+app.get("/article/:_id", async(req, res) =>{
     const _id = req.params._id;
     const foundArticle = await findOne(_id);
     const {title, content} = foundArticle;
-    res.render("index", {title: title, content: content,articles: await find()});
+    res.render("article", {title: title, content: content,articles: await find()});
+})
+
+app.get("/compose", (req,res) => {
+    res.render("compose" );
+})
+
+app.post("/", async(req,res) => {
+    await save(req.body.title, req.body.content);
+    res.redirect("/");
 })
 
 app.listen(3000, async function(){
     console.log("Server is running on port 3000");
     await connectDB();
 })
+
+
 
